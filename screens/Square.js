@@ -12,30 +12,47 @@ export const Square = () => {
   const [green, setGreen] = useState(0);
   const [blue, setBlue] = useState(0);
 
-  const ADJUST_BY = 10;
+  const ADJUST_BY = 15;
+
+  // color === 'red' || 'gree' || 'blue
+  const setColor = (color, change) => {
+    switch (color) {
+      case 'red':
+        red + change > 255 || red + change < 0 ? null : setRed(red + change);
+        return;
+      case 'green':
+        green + change > 255 || green + change < 0 ? null : setGreen(green + change);
+        return;
+      case 'blue':
+        blue + change > 255 || blue + change < 0 ? null : setBlue(blue + change);
+        return;
+      default:
+        return;
+    }
+  }
 
   return (
     <View style={{ alignItems: 'center' }}>
       <ColorCounter
         color="Red"
         onIncrease={
-          () => setRed(red + ADJUST_BY)}
+          () => setColor('red', ADJUST_BY)}
         onDecrease={
-          () => setRed(red - ADJUST_BY)}
+          () => setColor('red', -ADJUST_BY)}
       />
       <ColorCounter
         color="Green"
         onIncrease={
-          () => setGreen(green + ADJUST_BY)}
+          () => setColor('green', ADJUST_BY)}
         onDecrease={
-          () => setGreen(green - ADJUST_BY)}
+          () => setColor('green', -ADJUST_BY)}
       />
       <ColorCounter
         color="Blue"
         onIncrease={
-          () => setBlue(blue + ADJUST_BY)}
+          () => setColor('blue', ADJUST_BY)}
         onDecrease={
-          () => setBlue(blue - ADJUST_BY)}
+          () => setColor('blue', -ADJUST_BY)}
       />
       <View style={{
         height: 300,
