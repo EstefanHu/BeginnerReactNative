@@ -11,7 +11,7 @@ export const Home = ({navigation}) => {
     <View>
       <Text>Home</Text>
       <Button title='Random Colors' onPress={() => navigation.navigate('RandomColors')}/>
-      <Button title='Square' onPress={() => navigation.navigate('Square')}/>
+      <Button title='Color Editor' onPress={() => navigation.navigate('ColorEditor')}/>
     </View>
   )
 }
