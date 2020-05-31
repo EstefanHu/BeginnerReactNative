@@ -23,9 +23,9 @@ export const BusinesSearch = () => {
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <Text>{term}</Text>
       <Text>{results.length}</Text>
-      <ResultsLists />
-      <ResultsLists />
-      <ResultsLists />
+      <ResultsLists title='Cost Effective' />
+      <ResultsLists title='Bit Pricier' />
+      <ResultsLists title='Bit Exspencive' />
     </View>
   )
 }
