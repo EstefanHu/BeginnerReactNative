@@ -9,7 +9,7 @@ export const RandomColor = () => {
   const [colors, setColors] = useState([]);
 
   return (
-    <View>
+    <View style={{alignItems: 'center'}}>
       <Button
         title='Add a Color'
         onPress={() => setColors([...colors, randomRgb()])}
@@ -17,6 +17,7 @@ export const RandomColor = () => {
       <FlatList
         keyExtractor={(item) => item}
         data={colors}
+        numColumns={3}
         renderItem={({ item }) => <View style={{ height: 100, width: 100, backgroundColor: item }} />}
       />
     </View>

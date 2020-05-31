@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import { Home } from './screens/Home.js';
 import { RandomColor } from './screens/RandomColors.js';
+import { Square } from './screens/Square.js';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='RandomColors' component={RandomColor} />
+        <Stack.Screen name='Square' component={Square} />
       </Stack.Navigator>
     </NavigationContainer>
   );
