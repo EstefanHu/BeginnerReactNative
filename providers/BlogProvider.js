@@ -4,10 +4,14 @@ export const BlogContext = React.createContext({});
 
 export const BlogProvider = ({ children }) => {
   const [things, setThings] = useState(null);
-  
+
   return (
-    <BlogContext>
+    <BlogContext.Provider
+      value={
+        5
+      }
+    >
       {children}
-    </BlogContext>
+    </BlogContext.Provider>
   )
 }

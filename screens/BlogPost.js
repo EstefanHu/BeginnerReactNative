@@ -1,17 +1,14 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
   Text,
 } from 'react-native';
-import { BlogContext } from '../providers/BlogProvider.js';
 
-export const Blog = () => {
-  const value = useContext(BlogContext);
-
+export const BlogPost = () => {
   return (
     <View style={styles.container}>
-      <Text>{value}</Text>
+      <Text>Post</Text>
     </View>
   )
 }

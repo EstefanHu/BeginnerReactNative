@@ -10,10 +10,11 @@ import { Styles } from './screens/Styles.js';
 import { BusinesSearch } from './screens/BusinesSearch.js';
 import { BusinessResult } from './screens/BusinessResult.js';
 import { Blog } from './screens/Blog.js';
+import { BlogProvider } from './providers/BlogProvider.js';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -28,4 +29,12 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
+}
+
+export default () => {
+  return (
+    <BlogProvider>
+      <App />
+    </BlogProvider>
+  )
 }
