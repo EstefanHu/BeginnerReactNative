@@ -11,7 +11,9 @@ import { BusinessResultsDetail } from './BusinessResultsDetail.js';
 
 export const BusinessResultsLists = ({ title, results }) => {
   const navigation = useNavigation();
-  
+
+  if (!results.length) return null;
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -24,8 +26,7 @@ export const BusinessResultsLists = ({ title, results }) => {
           return (
             <TouchableOpacity
               onPress={
-                () =>
-                  navigation.navigate('BusinessResult')
+                () => navigation.navigate('BusinessResult', { id: item.id })
               }
             >
               <BusinessResultsDetail result={item} />

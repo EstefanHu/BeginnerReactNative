@@ -28,8 +28,9 @@ export const BusinesSearch = () => {
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
         <BusinessResultsLists results={filterResultsByPrice('$')} title='Cost Effective' />
-      <BusinessResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
+        <BusinessResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
         <BusinessResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' />
+        <BusinessResultsLists results={filterResultsByPrice('$$$$')} title='Bit Exspencive' />
       </ScrollView>
     </>
   )
