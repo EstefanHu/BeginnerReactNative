@@ -4,29 +4,14 @@ import {
   View,
   Text,
 } from 'react-native';
-import yelp from '../api/yelp.js';
+import useResults from '../hooks/useResults.js';
 
 import { BusinesSearchBar } from '../components/BusinesSearchBar.js';
+import { ResultsLists } from '../components/resultsLists.js';
 
 export const BusinesSearch = () => {
   const [term, setTerm] = useState('');
-  const [results, setResults] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const searchApi = async (searchTerm) => {
-    try {
-      const response = await yelp.get('./search', {
-        params: {
-          limit: 50,
-          term: searchTerm,
-          location: 'Seattle'
-        }
-      });
-      setResults(response.data.businesses);
-    } catch (error) {
-      setErrorMessage('Something Went Wrong');
-    }
-  }
+  const [searchApi, results, errorMessage] = useResults();
 
   return (
     <View style={styles.container}>
@@ -38,6 +23,9 @@ export const BusinesSearch = () => {
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <Text>{term}</Text>
       <Text>{results.length}</Text>
+      <ResultsLists />
+      <ResultsLists />
+      <ResultsLists />
     </View>
   )
 }
