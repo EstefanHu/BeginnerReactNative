@@ -3,12 +3,14 @@ import {
   StyleSheet,
   View,
   Text,
+  Button,
 } from 'react-native';
 
-export const RandomColor = () => {
+export const Home = ({navigation}) => {
   return (
     <View>
-      <Text>Random</Text>
+      <Text>Home</Text>
+      <Button title='Random Colors' onPress={() => navigation.navigate('RandomColors')}/>
     </View>
   )
 }
