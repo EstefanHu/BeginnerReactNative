@@ -4,19 +4,21 @@ import {
   View,
   Text,
   FlatList,
+  Button,
 } from 'react-native';
 import { BlogContext } from '../providers/BlogProvider.js';
 
 export const Blog = () => {
-  const value = useContext(BlogContext);
+  const { blogPosts, addBlogPost } = useContext(BlogContext);
 
   return (
     <View style={styles.container}>
+      <Button title='Add Post' onPress={addBlogPost} />
       <FlatList
-        keyExtractor={value => value}
-        data={value}
+        data={blogPosts}
+        keyExtractor={blogPost => blogPost.title}
         renderItem={({ item }) => {
-          return <Text>{item}</Text>
+          return <Text>{item.title}</Text>
         }}
       />
     </View>
