@@ -10,7 +10,19 @@ import { ColorCounter } from '../components/ColorCounter.js';
 COLOR_INCREMENT = 15;
 
 const reducer = (state, action) => {
-    
+  // state === { red: 0, green: 0, blue: 0 }
+  // action === { colorToChange: 'red' || 'green' || 'blue'}
+  switch (action.colorToChange) {
+    case 'red':
+      return { ...state, red: state.red + action.amount };
+    case 'green':
+      return { ...state, green: state.green + action.amount };
+    case 'blue':
+      return { ...state, blue: state.blue + action.amount };
+    default:
+      return state;
+
+  }
 }
 
 export const Square = () => {
