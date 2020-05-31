@@ -1,8 +1,9 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import {
   StyleSheet,
   View,
   Text,
+  FlatList,
 } from 'react-native';
 import { BlogContext } from '../providers/BlogProvider.js';
 
@@ -11,7 +12,13 @@ export const Blog = () => {
 
   return (
     <View style={styles.container}>
-      <Text>{value}</Text>
+      <FlatList
+        keyExtractor={value => value}
+        data={value}
+        renderItem={({ item }) => {
+          return <Text>{item}</Text>
+        }}
+      />
     </View>
   )
 }
