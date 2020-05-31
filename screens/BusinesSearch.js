@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import {
-  StyleSheet,
-  View,
   Text,
   ScrollView,
 } from 'react-native';
@@ -21,7 +19,7 @@ export const BusinesSearch = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <>
       <BusinesSearchBar
         term={term}
         onTermChange={newTerm => setTerm(newTerm)}
@@ -33,13 +31,6 @@ export const BusinesSearch = () => {
         <ResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
         <ResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' />
       </ScrollView>
-    </View>
+    </>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  }
-});
