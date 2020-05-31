@@ -1,20 +1,24 @@
 import React from 'react';
 import {
-  StyleSheet,
   View,
-  Text,
+  Button,
 } from 'react-native';
 
 export const RandomColor = () => {
   return (
     <View>
-      <Text>Random</Text>
+      <Button title='Add a Color' />
+      <View
+        style={{ height: 100, width: 100, backgroundColor: randomRgb() }}
+      />
     </View>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
+const randomRgb = () => {
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
 
-  }
-})
+  return `rgb(${red},${green},${blue})`;
+}
