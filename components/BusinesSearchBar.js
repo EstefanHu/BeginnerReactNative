@@ -17,7 +17,7 @@ export const BusinesSearchBar = ({ term, onTermChange, onTermSubmit }) => {
         value={term}
         onChangeText={newTerm => onTermChange(newTerm)}
         autoCapitalize='none'
-        autoCompleteType={false}
+        autoCompleteType={'off'}
         onEndEditing={onTermSubmit}
       />
     </View>
