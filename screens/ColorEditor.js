@@ -1,9 +1,9 @@
-import React, { useReducer } from 'react'
+import React, { useReducer } from 'react';
 import {
   StyleSheet,
   View,
   Text
-} from 'react-native'
+} from 'react-native';
 
 import { ColorCounter } from '../components/ColorCounter.js';
 
