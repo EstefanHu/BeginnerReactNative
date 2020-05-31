@@ -4,11 +4,13 @@ import {
   View,
   Text,
 } from 'react-native';
+import yelp from '../api/yelp.js';
 
 import { BusinesSearchBar } from '../components/BusinesSearchBar.js';
 
 export const BusinesSearch = () => {
   const [term, setTerm] = useState('');
+  const [results, setResult] = useState([]);
 
   return (
     <View style={styles.container}>
@@ -18,6 +20,7 @@ export const BusinesSearch = () => {
         onTermSubmit={console.log}
       />
       <Text>{term}</Text>
+      <Text>{results.lenfth}</Text>
     </View>
   )
 }
