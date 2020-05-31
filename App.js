@@ -9,6 +9,7 @@ import { Counter } from './screens/Counter.js';
 import { Styles } from './screens/Styles.js';
 import { BusinesSearch } from './screens/BusinesSearch.js';
 import { BusinessResult } from './screens/BusinessResult.js';
+import { Blog } from './screens/Blog.js';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Home' component={Home} />
+        <Stack.Screen name='Blog' component={Blog} />
         <Stack.Screen name='BusinesSearch' component={BusinesSearch} />
         <Stack.Screen name='BusinessResult' component={BusinessResult} />
         <Stack.Screen name='Styles' component={Styles} />
