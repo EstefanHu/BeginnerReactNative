@@ -8,7 +8,7 @@ import useResults from '../hooks/useResults.js';
 import { BusinesSearchBar } from '../components/BusinesSearchBar.js';
 import { BusinessResultsLists } from '../components/BusinessResultsLists.js';
 
-export const BusinesSearch = ({ navigation }) => {
+export const BusinesSearch = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, errorMessage] = useResults();
 
@@ -27,9 +27,9 @@ export const BusinesSearch = ({ navigation }) => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
-        <BusinessResultsLists results={filterResultsByPrice('$')} title='Cost Effective' navigation={navigation} />
-      <BusinessResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' navigation={navigation} />
-        <BusinessResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' navigation={navigation} />
+        <BusinessResultsLists results={filterResultsByPrice('$')} title='Cost Effective' />
+      <BusinessResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
+        <BusinessResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' />
       </ScrollView>
     </>
   )

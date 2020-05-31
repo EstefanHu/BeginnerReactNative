@@ -6,9 +6,12 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { BusinessResultsDetail } from './BusinessResultsDetail.js';
 
-export const BusinessResultsLists = ({ title, results, navigation }) => {
+export const BusinessResultsLists = ({ title, results }) => {
+  const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -19,7 +22,12 @@ export const BusinessResultsLists = ({ title, results, navigation }) => {
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity onPress={() => navigation.navigate('BusinessResult')}>
+            <TouchableOpacity
+              onPress={
+                () =>
+                  navigation.navigate('BusinessResult')
+              }
+            >
               <BusinessResultsDetail result={item} />
             </TouchableOpacity>
           )
