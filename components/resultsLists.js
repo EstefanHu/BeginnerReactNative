@@ -5,6 +5,7 @@ import {
   Text,
   FlatList,
 } from 'react-native';
+import { ResultsDetail } from './resultsDetail.js';
 
 export const ResultsLists = ({ title, results }) => {
   return (
@@ -14,8 +15,8 @@ export const ResultsLists = ({ title, results }) => {
         horizontal
         data={results}
         keyExtractor={result => result.id}
-        renderItem={({item}) => {
-          return <Text>{item.name}</Text>
+        renderItem={({ item }) => {
+          return <ResultsDetail result={item} />
         }}
       />
     </View>
