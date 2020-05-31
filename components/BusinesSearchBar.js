@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -6,8 +6,7 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-export const BusinesSearchBar = () => {
-  const [input, setInput] = useState('');
+export const BusinesSearchBar = ({ term, onTermChange }) => {
 
   return (
     <View style={styles.container}>
@@ -15,8 +14,11 @@ export const BusinesSearchBar = () => {
       <TextInput
         style={styles.input}
         placeholder='search'
-        value={input}
-        onChangeText={e => setInput(e.target.value)}
+        value={term}
+        onChangeText={newTerm => onTermChange(newTerm)}
+        autoCapitalize='none'
+        autoCompleteType={false}
+        onEndEditing={() => console.log('submitted')}
       />
     </View>
   )
