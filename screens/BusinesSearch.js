@@ -13,6 +13,12 @@ export const BusinesSearch = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, errorMessage] = useResults();
 
+  const filterResultsByPrice = (price) => {
+    return results.filter(result => {
+      return result.price === price;
+    });
+  };
+
   return (
     <View style={styles.container}>
       <BusinesSearchBar
@@ -23,9 +29,9 @@ export const BusinesSearch = () => {
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <Text>{term}</Text>
       <Text>{results.length}</Text>
-      <ResultsLists title='Cost Effective' />
-      <ResultsLists title='Bit Pricier' />
-      <ResultsLists title='Bit Exspencive' />
+      <ResultsLists results={filterResultsByPrice('$')} title='Cost Effective' />
+      <ResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
+      <ResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' />
     </View>
   )
 }
