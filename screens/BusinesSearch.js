@@ -3,6 +3,7 @@ import {
   StyleSheet,
   View,
   Text,
+  ScrollView,
 } from 'react-native';
 import useResults from '../hooks/useResults.js';
 
@@ -27,11 +28,11 @@ export const BusinesSearch = () => {
         onTermSubmit={() => searchApi(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <Text>{term}</Text>
-      <Text>{results.length}</Text>
-      <ResultsLists results={filterResultsByPrice('$')} title='Cost Effective' />
-      <ResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
-      <ResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' />
+      <ScrollView>
+        <ResultsLists results={filterResultsByPrice('$')} title='Cost Effective' />
+        <ResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
+        <ResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' />
+      </ScrollView>
     </View>
   )
 }

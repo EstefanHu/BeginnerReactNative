@@ -15,6 +15,7 @@ export const ResultsLists = ({ title, results }) => {
         horizontal
         data={results}
         keyExtractor={result => result.id}
+        showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => {
           return <ResultsDetail result={item} />
         }}
