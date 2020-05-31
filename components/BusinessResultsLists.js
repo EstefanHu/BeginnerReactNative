@@ -5,9 +5,9 @@ import {
   Text,
   FlatList,
 } from 'react-native';
-import { ResultsDetail } from './resultsDetail.js';
+import { BusinessResultsDetail } from './BusinessResultsDetail.js';
 
-export const ResultsLists = ({ title, results }) => {
+export const BusinessResultsLists = ({ title, results }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -17,7 +17,7 @@ export const ResultsLists = ({ title, results }) => {
         keyExtractor={result => result.id}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => {
-          return <ResultsDetail result={item} />
+          return <BusinessResultsDetail result={item} />
         }}
       />
     </View>

@@ -6,7 +6,7 @@ import {
 import useResults from '../hooks/useResults.js';
 
 import { BusinesSearchBar } from '../components/BusinesSearchBar.js';
-import { ResultsLists } from '../components/resultsLists.js';
+import { BusinessResultsLists } from '../components/BusinessResultsLists.js';
 
 export const BusinesSearch = () => {
   const [term, setTerm] = useState('');
@@ -27,9 +27,9 @@ export const BusinesSearch = () => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
-        <ResultsLists results={filterResultsByPrice('$')} title='Cost Effective' />
-        <ResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
-        <ResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' />
+        <BusinessResultsLists results={filterResultsByPrice('$')} title='Cost Effective' />
+        <BusinessResultsLists results={filterResultsByPrice('$$')} title='Bit Pricier' />
+        <BusinessResultsLists results={filterResultsByPrice('$$$')} title='Bit Exspencive' />
       </ScrollView>
     </>
   )

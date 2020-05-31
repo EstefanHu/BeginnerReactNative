@@ -6,7 +6,7 @@ import {
   Image
 } from 'react-native';
 
-export const ResultsDetail = ({ result }) => {
+export const BusinessResultsDetail = ({ result }) => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: result.image_url }} />
