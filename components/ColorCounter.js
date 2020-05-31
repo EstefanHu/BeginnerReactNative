@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, Button } from 'react-native'
 
-export const ColorCounter = ({color, onIncrease, onDecrease}) => {
+export const ColorCounter = ({ color, onIncrease, onDecrease }) => {
   return <View>
     <Text>{color}</Text>
     <Button title={`Increase ${color}`} onPress={() => onIncrease()} />
