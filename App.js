@@ -8,6 +8,7 @@ import { ColorEditor } from './screens/ColorEditor.js';
 import { Counter } from './screens/Counter.js';
 import { Styles } from './screens/Styles.js';
 import { BusinesSearch } from './screens/BusinesSearch.js';
+import { BusinessResult } from './screens/BusinessResult.js';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='BusinesSearch' component={BusinesSearch} />
+        <Stack.Screen name='BusinessResult' component={BusinessResult} />
         <Stack.Screen name='Styles' component={Styles} />
         <Stack.Screen name='ColorEditor' component={ColorEditor} />
         <Stack.Screen name='RandomColors' component={RandomColor} />
