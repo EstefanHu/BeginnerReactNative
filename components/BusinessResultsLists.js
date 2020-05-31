@@ -4,10 +4,11 @@ import {
   View,
   Text,
   FlatList,
+  TouchableOpacity,
 } from 'react-native';
 import { BusinessResultsDetail } from './BusinessResultsDetail.js';
 
-export const BusinessResultsLists = ({ title, results }) => {
+export const BusinessResultsLists = ({ title, results, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -17,7 +18,11 @@ export const BusinessResultsLists = ({ title, results }) => {
         keyExtractor={result => result.id}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => {
-          return <BusinessResultsDetail result={item} />
+          return (
+            <TouchableOpacity onPress={() => navigation.navigate('BusinessResult')}>
+              <BusinessResultsDetail result={item} />
+            </TouchableOpacity>
+          )
         }}
       />
     </View>
