@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   View,
   Button,
+  FlatList,
 } from 'react-native';
 
 export const RandomColor = () => {
@@ -13,8 +14,10 @@ export const RandomColor = () => {
         title='Add a Color'
         onPress={() => setColors([...colors, randomRgb()])}
       />
-      <View
-        style={{ height: 100, width: 100, backgroundColor: randomRgb() }}
+      <FlatList
+        keyExtractor={(item) => item}
+        data={colors}
+        renderItem={({ item }) => <View style={{ height: 100, width: 100, backgroundColor: item }} />}
       />
     </View>
   )
