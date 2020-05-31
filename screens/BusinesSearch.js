@@ -5,10 +5,13 @@ import {
   Text,
 } from 'react-native';
 
+import { BusinesSearchBar } from '../components/BusinesSearchBar.js';
+
 export const BusinesSearch = () => {
+
   return (
     <View>
-      <Text>Home</Text>
+      <BusinesSearchBar />
     </View>
   )
 }
