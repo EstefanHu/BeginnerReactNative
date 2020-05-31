@@ -59,6 +59,7 @@ export const Square = () => {
         width: 300,
         backgroundColor: `rgb(${red}, ${green}, ${blue})`
       }} />
+      <Text>rgb({red}, {green}, {blue})</Text>
     </View>
   )
 }
