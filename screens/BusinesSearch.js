@@ -12,7 +12,11 @@ export const BusinesSearch = () => {
 
   return (
     <View style={styles.container}>
-      <BusinesSearchBar term={term} onTermChange={newTerm => setTerm(newTerm)} />
+      <BusinesSearchBar
+        term={term}
+        onTermChange={newTerm => setTerm(newTerm)}
+        onTermSubmit={console.log}
+      />
       <Text>{term}</Text>
     </View>
   )

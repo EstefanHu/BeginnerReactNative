@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-export const BusinesSearchBar = ({ term, onTermChange }) => {
+export const BusinesSearchBar = ({ term, onTermChange, onTermSubmit }) => {
 
   return (
     <View style={styles.container}>
@@ -18,7 +18,7 @@ export const BusinesSearchBar = ({ term, onTermChange }) => {
         onChangeText={newTerm => onTermChange(newTerm)}
         autoCapitalize='none'
         autoCompleteType={false}
-        onEndEditing={() => console.log('submitted')}
+        onEndEditing={onTermSubmit}
       />
     </View>
   )
