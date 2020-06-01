@@ -6,6 +6,7 @@ import {
   FlatList,
   Button,
 } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 import { Context } from '../providers/BlogProvider.js';
 
 export const Blog = () => {
@@ -18,7 +19,10 @@ export const Blog = () => {
         data={state}
         keyExtractor={blogPost => blogPost.title}
         renderItem={({ item }) => {
-          return <Text>{item.title}</Text>
+          return <View style={styles.row}>
+            <Text style={styles.text}>{item.title}</Text>
+            <Feather name='trash' style={styles.icon}/>
+          </View>
         }}
       />
     </View>
@@ -27,8 +31,19 @@ export const Blog = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    borderTopWidth: 1,
+    borderColor: 'grey'
+  },
+  title: {
+    fontSize: 18
+  },
+  icon: {
+    fontSize:24
   }
 });
