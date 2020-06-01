@@ -5,23 +5,26 @@ import {
   Text,
   FlatList,
   Button,
+  TouchableOpacity
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Context } from '../providers/BlogProvider.js';
 
 export const Blog = () => {
-  const { state, addBlogPost } = useContext(Context);
+  const { state, addBlogPost, deleteBlogPost } = useContext(Context);
 
   return (
     <View style={styles.container}>
       <Button title='Add Post' onPress={addBlogPost} />
       <FlatList
         data={state}
-        keyExtractor={blogPost => blogPost.title}
+        keyExtractor={blogPost => blogPost.id}
         renderItem={({ item }) => {
           return <View style={styles.row}>
-            <Text style={styles.text}>{item.title}</Text>
-            <Feather name='trash' style={styles.icon}/>
+            <Text style={styles.text}>{item.title} - {item.id}</Text>
+            <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
+              <Feather name='trash' style={styles.icon} />
+            </TouchableOpacity>
           </View>
         }}
       />
@@ -44,6 +47,6 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   icon: {
-    fontSize:24
+    fontSize: 24
   }
 });
