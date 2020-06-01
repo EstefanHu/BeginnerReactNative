@@ -9,9 +9,12 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Context } from '../providers/BlogProvider.js';
+import { useNavigation } from '@react-navigation/native';
 
 export const Blog = () => {
   const { state, addBlogPost, deleteBlogPost } = useContext(Context);
+
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -20,12 +23,16 @@ export const Blog = () => {
         data={state}
         keyExtractor={blogPost => blogPost.title}
         renderItem={({ item }) => {
-          return <View style={styles.row}>
-            <Text style={styles.text}>{item.title} - {item.id}</Text>
-            <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
-              <Feather name='trash' style={styles.icon} />
+          return (
+            <TouchableOpacity onPress={() => navigation.navigate('BlogPost', { id: item.id })}>
+              <View style={styles.row}>
+                <Text style={styles.text}>{item.title} - {item.id}</Text>
+                <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
+                  <Feather name='trash' style={styles.icon} />
+                </TouchableOpacity>
+              </View>
             </TouchableOpacity>
-          </View>
+          )
         }}
       />
     </View>
