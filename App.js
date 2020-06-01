@@ -10,7 +10,7 @@ import { Styles } from './screens/Styles.js';
 import { BusinesSearch } from './screens/BusinesSearch.js';
 import { BusinessResult } from './screens/BusinessResult.js';
 import { Blog } from './screens/Blog.js';
-import { BlogProvider } from './providers/BlogProvider.js';
+import { Provider as BlogProvider } from './providers/BlogProvider.js';
 
 const Stack = createStackNavigator();
 
