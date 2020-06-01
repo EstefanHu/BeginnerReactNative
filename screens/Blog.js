@@ -18,7 +18,7 @@ export const Blog = () => {
       <Button title='Add Post' onPress={addBlogPost} />
       <FlatList
         data={state}
-        keyExtractor={blogPost => blogPost.id}
+        keyExtractor={blogPost => blogPost.title}
         renderItem={({ item }) => {
           return <View style={styles.row}>
             <Text style={styles.text}>{item.title} - {item.id}</Text>
