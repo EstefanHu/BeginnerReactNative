@@ -12,14 +12,13 @@ import { Context } from '../providers/BlogProvider.js';
 import { useNavigation } from '@react-navigation/native';
 
 export const Blog = () => {
-  const { state, addBlogPost, deleteBlogPost } = useContext(Context);
+  const { state, deleteBlogPost } = useContext(Context);
 
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <Button title='Create Post' onPress={() => navigation.navigate('BlogCreate')} />
-      <Button title='Add Post' onPress={addBlogPost} />
       <FlatList
         data={state}
         keyExtractor={blogPost => blogPost.title}
