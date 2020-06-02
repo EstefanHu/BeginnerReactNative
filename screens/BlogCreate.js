@@ -8,8 +8,10 @@ import {
   Keyboard,
   Button,
 } from 'react-native';
+import { Context } from '../providers/BlogProvider';
 
 export const BlogCreate = () => {
+  const { addBlogPost } = useContext(Context);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
@@ -24,7 +26,7 @@ export const BlogCreate = () => {
         <TextInput style={styles.input} value={title} onChangeText={(text) => setTitle(text)} />
         <Text stlye={styles.label}>Enter Content:</Text>
         <TextInput style={styles.input} value={content} onChangeText={(text) => setContent(text)} />
-        <Button title='Add Blog Post' />
+        <Button title='Add Blog Post' onPress={() => addBlogPost(title, content)} />
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   )
