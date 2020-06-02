@@ -9,7 +9,11 @@ export const BlogEdit = ({ navigation, route }) => {
 
   return <BlogForm
     type={'Edit'}
-    onSubmit={() => null}
+    initialValues={{
+      title: blogPost.title,
+      content: blogPost.content
+    }}
+    onSubmit={(title, content) => null}
   />
 }
 

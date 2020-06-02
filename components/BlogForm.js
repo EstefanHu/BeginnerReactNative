@@ -9,9 +9,9 @@ import {
   Keyboard
 } from 'react-native';
 
-export const BlogForm = ({ type, onSubmit }) => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+export const BlogForm = ({ type, onSubmit, initialValues }) => {
+  const [title, setTitle] = useState(initialValues ? initialValues.title : '');
+  const [content, setContent] = useState(initialValues ? initialValues.content : '');
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
