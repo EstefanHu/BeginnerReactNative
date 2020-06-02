@@ -7,10 +7,13 @@ export const BlogCreate = () => {
   const { addBlogPost } = useContext(Context);
   const navigation = useNavigation();
 
-  return (
-    <BlogForm 
-      type={'Create'}
-      action={addBlogPost}
-    />
-  )
+  return <BlogForm
+    type={'Create'}
+    onSubmit={(title, content) => {
+      addBlogPost(title,
+        content,
+        () => navigation.navigate('Blog')
+      )
+    }}
+  />
 }

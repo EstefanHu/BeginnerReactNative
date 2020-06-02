@@ -9,7 +9,7 @@ import {
   Keyboard
 } from 'react-native';
 
-export const BlogForm = ({ type }) => {
+export const BlogForm = ({ type, onSubmit }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
@@ -24,7 +24,7 @@ export const BlogForm = ({ type }) => {
         <TextInput style={styles.input} value={title} onChangeText={(text) => setTitle(text)} />
         <Text stlye={styles.label}>Enter Content:</Text>
         <TextInput style={styles.input} value={content} onChangeText={(text) => setContent(text)} />
-        <Button title={`${type} Blog Post`} onPress={() => null} />
+        <Button title={`${type} Blog Post`} onPress={() => onSubmit(title, content)} />
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   )
