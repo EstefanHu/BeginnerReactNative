@@ -15,7 +15,7 @@ export const BlogPost = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('BlogEdit')}>
+      <TouchableOpacity onPress={() => navigation.navigate('BlogEdit', { id: route.params?.id })}>
         <EvilIcons name='pencil' size={35} />
       </TouchableOpacity>
       <Text>{blogPost.title}</Text>

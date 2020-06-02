@@ -1,20 +1,16 @@
-import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-} from 'react-native';
+import React, { useContext } from 'react';
+import { Context } from '../providers/BlogProvider.js';
+import { BlogForm } from '../components/BlogForm.js';
 
-export const BlogEdit = () => {
+export const BlogEdit = ({navigation, route}) => {
+  const { state } = useContext(Context);
+
+  const blogPost = state.find((blogPost) => blogPost.id === route.params?.id);
+
   return (
-    <View>
-      <Text>Edit</Text>
-    </View>
+    <BlogForm
+      type={'Edit'}
+    />
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    
-  }
-})
