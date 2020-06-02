@@ -3,9 +3,9 @@ import { Context } from '../providers/BlogProvider.js';
 import { BlogForm } from '../components/BlogForm.js';
 
 export const BlogEdit = ({ navigation, route }) => {
-  const { state } = useContext(Context);
-
-  const blogPost = state.find((blogPost) => blogPost.id === route.params?.id);
+  const { state, editBlogPost } = useContext(Context);
+  const id = route.params?.id;
+  const blogPost = state.find((blogPost) => blogPost.id === id);
 
   return <BlogForm
     type={'Edit'}
@@ -13,7 +13,12 @@ export const BlogEdit = ({ navigation, route }) => {
       title: blogPost.title,
       content: blogPost.content
     }}
-    onSubmit={(title, content) => null}
+    onSubmit={(title, content) => editBlogPost(
+      id,
+      title,
+      content,
+      () => navigation.navigate('BlogPost', { id })
+    )}
   />
 }
 
