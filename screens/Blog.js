@@ -18,6 +18,7 @@ export const Blog = () => {
 
   return (
     <View style={styles.container}>
+      <Button title='Create Post' onPress={() => navigation.navigate('BlogCreate')} />
       <Button title='Add Post' onPress={addBlogPost} />
       <FlatList
         data={state}

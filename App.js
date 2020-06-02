@@ -12,6 +12,8 @@ import { BusinessResult } from './screens/BusinessResult.js';
 import { Blog } from './screens/Blog.js';
 import { BlogPost } from './screens/BlogPost.js';
 import { Provider as BlogProvider } from './providers/BlogProvider.js';
+import { BlogCreate } from './screens/BlogCreate.js';
+import { BlogEdit } from './screens/BlogEdit.js';
 
 const Stack = createStackNavigator();
 
@@ -20,8 +22,10 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='Blog' component={Blog} />
+        <Stack.Screen name='Blog' component={Blog} options={{rightHeader: () => null}} />
         <Stack.Screen name='BlogPost' component={BlogPost} />
+        <Stack.Screen name='BlogCreate' component={BlogCreate} />
+        <Stack.Screen name='BlogEdit' component={BlogEdit} />
         <Stack.Screen name='BusinesSearch' component={BusinesSearch} />
         <Stack.Screen name='BusinessResult' component={BusinessResult} />
         <Stack.Screen name='Styles' component={Styles} />
