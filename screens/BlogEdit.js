@@ -17,7 +17,7 @@ export const BlogEdit = ({ navigation, route }) => {
       id,
       title,
       content,
-      () => navigation.navigate('BlogPost', { id })
+      () => navigation.goBack()
     )}
   />
 }
