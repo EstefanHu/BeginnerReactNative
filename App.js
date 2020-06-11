@@ -21,7 +21,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='AnimationCard'>
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='AnimationCard' component={AnimationCard} />
         <Stack.Screen name='Blog' component={Blog} options={{ rightHeader: () => null }} />

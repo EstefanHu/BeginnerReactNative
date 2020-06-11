@@ -4,6 +4,8 @@ import {
   View,
   Text,
 } from 'react-native';
+import { Card, Button } from 'react-native-elements';
+import { Deck } from '../components/Deck.js';
 
 const DATA = [
   { id: 1, text: 'Card #1', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
@@ -17,9 +19,25 @@ const DATA = [
 ];
 
 export const AnimationCard = () => {
+  const renderCard = item => {
+    return (
+      <Card
+        key={item.id}
+        title={item.text}
+        image={{ uri: item.uri }}
+      >
+        <Text style={{ marginBottom: 10 }}>Here is Some custom content</Text>
+        <Button icon={{ name: 'code' }} backgroundColor='#03a9f4' title='View Now!' />
+      </Card>
+    )
+  }
+
   return (
     <View style={styles.container}>
-
+      <Deck
+        data={DATA}
+        renderCard={renderCard}
+      />
     </View>
   )
 }
